@@ -5,7 +5,7 @@
             <div class="container-xl">
                 <div class="row g-3 mb-4 align-items-center justify-content-between">
                     <div class="col-auto">
-                        <h1 class="app-page-title mb-0">Student</h1>
+                        <h1 class="app-page-title mb-0">Kelas</h1>
                     </div>
                 <div class="col-auto">
                     <div class="page-utilities">
@@ -30,29 +30,29 @@
                             <table class="table app-table-hover mb-0 text-left">
                                 <thead>
                                     <tr>
-                                        <th class="cell">NO</th>
+                                        <!-- <th class="cell">NO</th> -->
                                         <!-- <th class="cell">ID</th> -->
-                                        <th class="cell">NISN</th>
+                                        <!-- <th class="cell">NISN</th>
                                         <th class="cell">NIS</th>
-                                        <th class="cell">Name</th>
+                                        <th class="cell">Name</th> -->
                                         <th class="cell">Class ID</th>
-                                        <th class="cell">Address</th>
+                                        <!-- <th class="cell">Address</th>
                                         <th class="cell">Telephone</th>
-                                        <th class="cell">Actions</th>
+                                        <th class="cell">Actions</th> -->
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr v-for="(stu,index) in student_list" :key="index">
+                                    <tr v-for="(cls,index) in kelas_list" :key="index">
                                         <td>{{ index+1 }}</td>
-                                        <!-- <td class="cell">{{stu.id_student}}</td> -->
-                                        <td class="cell">{{stu.nisn}}</td>
-                                        <td class="cell">{{stu.nis}}</td>
-                                        <td class="cell">{{stu.student_name}}</td>
-                                        <td class="cell">{{stu.id_class}}</td>
-                                        <td class="cell">{{stu.address}}</td>
-                                        <td class="cell">{{stu.telp}}</td>
+                                        <!-- <td class="cell">{{cls.id_student}}</td> -->
+                                        <!-- <td class="cell">{{cls.nisn}}</td>
+                                        <td class="cell">{{cls.nis}}</td>
+                                        <td class="cell">{{cls.student_name}}</td> -->
+                                        <td class="cell">{{cls.id_class}}</td>
+                                        <!-- <td class="cell">{{cls.address}}</td>
+                                        <td class="cell">{{cls.telp}}</td> -->
                                         <td class="cell">
-                                            <button class="btn-sm app-btn-secondary" @click="Edit(stu)" data-bs-toggle="modal" data-bs-target="#student_modal">Edit</button>
+                                            <button class="btn-sm app-btn-secondary" @click="Edit(cls)" data-bs-toggle="modal" data-bs-target="#student_modal">Edit</button>
                                             <button class="btn-sm app-btn-secondary" @click="Delete()">Delete</button>
                                         </td>
                                     </tr>
@@ -70,16 +70,16 @@
 
 <script>
     export default {
-        name : "Student_page",
+        name : "Kelas_page",
         data(){
             return{
-                nisn :"",
-                nis:"",
-                student_name:"",
+                // nisn :"",
+                // nis:"",
+                // student_name:"",
                 id_class:"",
-                address:"",
-                telp:"",
-                student_list:[],
+                // address:"",
+                // telp:"",
+                // student_list:[],
                 grade_list:[],
             }
         },
@@ -100,34 +100,34 @@
             },
 
             Add: function(){
-                this.nisn =""
-                this.nis=""
-                this.student_name=""
+                // this.nisn =""
+                // this.nis=""
+                // this.student_name=""
                 this.id_class=""
-                this.address=""
-                this.telp=""
+                // this.address=""
+                // this.telp=""
                 this.action="insert"
                 this.getGrade()
             },
 
             Edit: function(stu){
-                this.nisn = stu.nisn
-                this.nis = stu.nis
-                this.student_name = stu.student_name
-                this.id_class = stu.id_class
-                this.address = stu.address
-                this.telp = stu.telp
+                // this.nisn = cls.nisn
+                // this.nis = cls.nis
+                // this.student_name = cls.student_name
+                this.id_class = cls.id_class
+                // this.address = cls.address
+                // this.telp = cls.telp
                 this.action="update"
                 this.getGrade()
             },
 
             Save: function(){
                 let form  = {
-                    'nis' : this.nis,
-                    'student_name': this.student_name,
+                    // 'nis' : this.nis,
+                    // 'student_name': this.student_name,
                     'id_class': this.id_class,
-                    'address': this.address,
-                    'telp': this.telp,
+                    // 'address': this.address,
+                    // 'telp': this.telp,
                 }
 
                 if(this.action == 'insert'){ //POST

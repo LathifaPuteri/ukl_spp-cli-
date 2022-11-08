@@ -9,12 +9,14 @@ axios.defaults.baseURL = 'http://localhost:8000/api'
 
 import Dashboard from './components/Dashboard.vue';
 import Student from './components/Student.vue';
+import Kelas from './components/Kelas.vue';
 
 const router = createRouter({
     history : createWebHistory(),
     routes : [
         {path : '/', name : "Dashboard", component : Dashboard},
         {path : '/student', name : "Student", component : Student},
+        {path : '/kelas', name : "Kelas", component : Kelas},
     ]
 })
 
